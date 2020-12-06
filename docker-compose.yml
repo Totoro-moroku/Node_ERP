@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  server:
+    build: ./server
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: .
+        target: /usr/src/client
+
+  # client:
+  #   build: ./client
+  #   tty: true
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - "./client:/usr/src/client"
